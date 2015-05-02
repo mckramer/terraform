@@ -52,8 +52,10 @@ describe("templates", function(){
         should.exist(body)
         // from main file
         body.should.include("<h1>Hello Handlebars</h1>")
-        // from jade partial
+        // from jade partial as JSON
         body.should.include("<h3>Brock Whitten</h3>")
+        // from jade partial with subexpression
+        body.should.include("<h3>Vancouver</h3>")
         done()
       })
     })
