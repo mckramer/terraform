@@ -54,6 +54,16 @@ describe("templates", function(){
         done()
       })
     })
+
+    it("should merge frontmatter into locals", function(done){
+      poly.render("md/frontmatter.md", function(error, body){
+        should.not.exist(error)
+        should.exist(body)
+        body.should.include("<h1>Frontmatter</h1>")
+        body.should.include("<title>Running late</title>")
+        done()
+      })
+    })
   })
 
   describe(".jade", function(){
